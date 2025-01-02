@@ -31,7 +31,7 @@ const Navbar = () => {
             <li className="hover:border-blue-500 border-b-2 border-transparent"><a className="text-white" href="#">Projects</a></li>
             <li className="relative group">
               <a className="text-white hover:border-b-2 border-blue-500" href="#">TimeLine</a>
-              <ul className="absolute hidden group-hover:block border-2 border-l-teal-500 bg-transparent text-white p-4 mt-2 space-y-2">
+              <ul className="absolute hidden group-hover:block border-2 border-l-teal-500 bg-transparent text-white p-4 mt-1 space-y-2">
                 <li className=""><a href="#">Blogs</a></li>
                 <li className=""><a href="#">Our Events</a></li>
               </ul>
