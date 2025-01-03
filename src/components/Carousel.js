@@ -1,48 +1,76 @@
-import React, { useState } from "react";
-import { BsArrowLeftCircleFill, BsArrowRightCircleFill } from "react-icons/bs";
+import { useState, useEffect } from "react";
 
+const Carousel = ({ images, autoSlideInterval = 3000, transitionDuration = 2000 }) => {
+  const [currentIndex, setCurrentIndex] = useState(0);
 
-export const Carousel = ({ data }) => {
-  const [slide, setSlide] = useState(0);
-
+  // Function to go to the next slide
   const nextSlide = () => {
-    setSlide(slide === data.length - 1 ? 0 : slide + 1);
+    setCurrentIndex((prevIndex) =>
+      prevIndex === images.length - 1 ? 0 : prevIndex + 1
+    );
   };
 
+  // Function to go to the previous slide
   const prevSlide = () => {
-    setSlide(slide === 0 ? data.length - 1 : slide - 1);
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? images.length - 1 : prevIndex - 1
+    );
   };
+
+  // Automatically move to the next slide after a delay
+  useEffect(() => {
+    const intervalId = setInterval(nextSlide, autoSlideInterval);
+
+    // Cleanup the interval on component unmount
+    return () => clearInterval(intervalId);
+  }, [autoSlideInterval]);
 
   return (
-    <div className="flex relative justify-center content-center h-auto">
-      <BsArrowLeftCircleFill onClick={prevSlide} className="absolute drop-shadow-[0_0_5px_rgba(85,85,85,1)] w-8 h-8 left-0 top-1/2 text-white hover:cursor-pointer" />
-      {data.map((item, idx) => {
-        return (
+    <div className="relative w-full h-96 mx-auto">
+      {/* Images */}
+      <div className="overflow-hidden rounded-lg w-full h-full">
+        {images.map((image, index) => (
           <img
-            src={item.src}
-            alt={item.alt}
-            key={idx}
-            className={slide === idx ? "" : "hidden"}
+            key={index}
+            src={image.url}
+            alt={`Slide ${index + 1}`}
+            className={`w-full h-full object-cover absolute transition-opacity duration-${transitionDuration} ease-in-out ${
+              index === currentIndex ? "opacity-100" : "opacity-0"
+            }`}
           />
-        );
-      })}
-      <BsArrowRightCircleFill
+        ))}
+      </div>
+
+      {/* Previous Button */}
+      <button
+        className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-gray-800 text-white p-3 rounded-full hover:bg-gray-600 focus:outline-none"
+        onClick={prevSlide}
+      >
+        ❮
+      </button>
+
+      {/* Next Button */}
+      <button
+        className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-gray-800 text-white p-3 rounded-full hover:bg-gray-600 focus:outline-none"
         onClick={nextSlide}
-        className="absolute drop-shadow-[0_0_5px_rgba(85,85,85,1)] w-8 h-8 right-0 top-1/2 text-white hover:cursor-pointer"
-      />
-      <span className="flex absolute bottom-4">
-        {data.map((_, idx) => {
-          return (
-            <button
-              key={idx}
-              className={
-                slide === idx ? "bg-white h-2 w-2 rounded-full border-none outline-none shadow-[0_0_5px_rgba(85,85,85,1)] mx-1 cursor-pointer" : "bg-white h-2 w-2 rounded-full border-none outline-none shadow-[0_0_5px_rgba(85,85,85,1)] mx-1 cursor-pointer bg-grey"
-              }
-              onClick={() => setSlide(idx)}
-            ></button>
-          );
-        })}
-      </span>
+      >
+        ❯
+      </button>
+
+      {/* Dots */}
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-2">
+        {images.map((_, index) => (
+          <button
+            key={index}
+            className={`w-4 h-4 rounded-full ${
+              index === currentIndex ? "bg-white" : "bg-gray-500"
+            }`}
+            onClick={() => setCurrentIndex(index)}
+          ></button>
+        ))}
+      </div>
     </div>
   );
 };
+
+export default Carousel;

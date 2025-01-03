@@ -6,53 +6,53 @@ const Footer = () => {
   <div className="container px-5 py-24 mx-auto">
     <div className="flex flex-wrap md:text-left text-center order-first">
       <div className="lg:w-1/4 md:w-1/2 w-full px-4">
-        <h2 className="title-font font-medium text-white tracking-widest text-sm mb-3">CATEGORIES</h2>
+        <h2 className="title-font font-medium text-white tracking-widest text-sm mb-3">Main Links</h2>
         <nav className="list-none mb-10">
           <li>
-            <a className="text-white hover:text-blue">First Link</a>
+            <a className="text-white hover:text-blue">Home</a>
           </li>
           <li>
-            <a className="text-white hover:text-blue">Second Link</a>
+            <a className="text-white hover:text-blue">Projects</a>
           </li>
           <li>
-            <a className="text-white hover:text-blue">Third Link</a>
+            <a className="text-white hover:text-blue">TimeLine</a>
           </li>
           <li>
-            <a className="text-white hover:text-blue">Fourth Link</a>
+            <a className="text-white hover:text-blue">About Us</a>
           </li>
         </nav>
       </div>
       <div className="lg:w-1/4 md:w-1/2 w-full px-4">
-        <h2 className="title-font font-medium text-white tracking-widest text-sm mb-3">CATEGORIES</h2>
+        <h2 className="title-font font-medium text-white tracking-widest text-sm mb-3">Our Blogs</h2>
         <nav className="list-none mb-10">
           <li>
-            <a className="text-white hover:text-blue">First Link</a>
+            <a className="text-white hover:text-blue">Blog 1 Link</a>
           </li>
           <li>
-            <a className="text-white hover:text-blue">Second Link</a>
+            <a className="text-white hover:text-blue">Blog 2 Link</a>
           </li>
           <li>
-            <a className="text-white hover:text-blue">Third Link</a>
+            <a className="text-white hover:text-blue">Blog 3 Link</a>
           </li>
           <li>
-            <a className="text-white hover:text-blue">Fourth Link</a>
+            <a className="text-white hover:text-blue">Blog 4 Link</a>
           </li>
         </nav>
       </div>
       <div className="lg:w-1/4 md:w-1/2 w-full px-4">
-        <h2 className="title-font font-medium text-white tracking-widest text-sm mb-3">CATEGORIES</h2>
+        <h2 className="title-font font-medium text-white tracking-widest text-sm mb-3">Events</h2>
         <nav className="list-none mb-10">
           <li>
-            <a className="text-white hover:text-blue">First Link</a>
+            <a className="text-white hover:text-blue">Link 1</a>
           </li>
           <li>
-            <a className="text-white hover:text-blue">Second Link</a>
+            <a className="text-white hover:text-blue">Link 2</a>
           </li>
           <li>
-            <a className="text-white hover:text-blue">Third Link</a>
+            <a className="text-white hover:text-blue">Link 3</a>
           </li>
           <li>
-            <a className="text-white hover:text-blue">Fourth Link</a>
+            <a className="text-white hover:text-blue">Link 4</a>
           </li>
         </nav>
       </div>
