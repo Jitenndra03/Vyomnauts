@@ -1,6 +1,4 @@
-import Navbar from './components/navbar';
 import './App.css';
-import Footer from './components/footer';
 import  Carousel  from './components/Carousel';
 function App() {
    const imageUrls = [
@@ -25,9 +23,7 @@ function App() {
 
   return (
     <>
-    <Navbar></Navbar>
     <Carousel images={imageUrls} autoSlideInterval={4000} />
-    <Footer></Footer>
     </>
   );
 }

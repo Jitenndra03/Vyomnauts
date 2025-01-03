@@ -26,7 +26,7 @@ const Carousel = ({ images, autoSlideInterval = 3000, transitionDuration = 2000 
   }, [autoSlideInterval]);
 
   return (
-    <div className="relative w-full h-96 mx-auto">
+    <div className="relative w-full h-screen mx-auto">
       {/* Images */}
       <div className="overflow-hidden rounded-lg w-full h-full">
         {images.map((image, index) => (
