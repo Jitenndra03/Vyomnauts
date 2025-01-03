@@ -4,7 +4,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="bg-transparent border-b-2 border-red-700">
+    <header className={`bg-transparent border-b-2 border-red-700 sticky top-0 z-10`}>
       <div className="container mx-auto flex flex-col lg:flex-row justify-between items-center py-4">
         <div className="flex space-x-4 order-2 lg:order-none">
           <a className="text-white hover:border-blue-500 border-b-2 border-transparent" href='#'>Join Us</a>
@@ -31,7 +31,7 @@ const Navbar = () => {
             <li className="hover:border-blue-500 border-b-2 border-transparent"><a className="text-white" href="#">Projects</a></li>
             <li className="relative group">
               <a className="text-white hover:border-b-2 border-blue-500" href="#">TimeLine</a>
-              <ul className="absolute hidden group-hover:block border-2 border-l-teal-500 bg-transparent text-white p-4 mt-1 space-y-2">
+              <ul className="absolute hidden group-hover:block bg-transparent text-white p-4 mt-1 space-y-2">
                 <li className=""><a href="#">Blogs</a></li>
                 <li className=""><a href="#">Our Events</a></li>
               </ul>
