@@ -6,14 +6,20 @@ import Navbar from "./components/navbar";
 import Footer from "./components/footer";
 import reportWebVitals from './reportWebVitals';
 import AboutUs from './components/AboutUs';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Navbar/>
-    {/* <App /> */}
-    <AboutUs/>
-    <Footer/>
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<App />} />
+        <Route path="/about" element={<AboutUs />} />
+        {/* <Route path="/contact" element={<Contact />} /> */}
+      </Routes>
+      <Footer />
+    </Router>
   </React.StrictMode>
 );
 

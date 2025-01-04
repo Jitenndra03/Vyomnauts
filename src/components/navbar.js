@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import { Link } from 'react-router-dom';
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -27,7 +27,7 @@ const Navbar = () => {
         </div>
         <nav className={`${isOpen ? 'block' : 'hidden'} lg:flex lg:items-center lg:space-x-8 order-3 lg:order-none mt-4 lg:mt-0`} id="mobile-menu">
           <ul className="flex flex-col lg:flex-row lg:space-x-8 space-y-2 lg:space-y-0 text-center">
-            <li className="hover:border-blue-500 border-b-2 border-transparent"><a className="text-white" href="#">Home</a></li>
+            <li className="hover:border-blue-500 border-b-2 border-transparent"><Link className="text-white" to="/">Home</Link></li>
             <li className="hover:border-blue-500 border-b-2 border-transparent"><a className="text-white" href="#">Projects</a></li>
             <li className="relative group">
               <a className="text-white hover:border-b-2 backdrop-blur-lg border-blue-500" href="#">TimeLine</a>
@@ -36,7 +36,7 @@ const Navbar = () => {
                 <li className="hover:border-blue-500 border-b-2 border-transparent"><a href="#">Our Events</a></li>
               </ul>
             </li>
-            <li className="hover:border-b-2 border-blue-500"><a className="text-white" href="#">About Us</a></li>
+            <li className="hover:border-b-2 border-blue-500"><Link className="text-white" to="/about">About Us</Link></li>
           </ul>
         </nav>
       </div>
