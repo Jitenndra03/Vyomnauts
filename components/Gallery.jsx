@@ -3,10 +3,10 @@ import React, { useState, useEffect } from "react";
 const ThumbnailGallery = () => {
   // Gallery images
   const images = [
-    { id: 1, src: "/images/img1.jpeg", alt: "Car Front View" },
-    { id: 2, src: "/images/team1.jpeg", alt: "Car Side View" },
-    { id: 3, src: "/images/team6.jpeg", alt: "Car Engine" },
-    { id: 4, src: "/images/team7.jpeg", alt: "Car Back View" },
+    { id: 1, src: "/images/img1.jpeg", alt: "img1" },
+    { id: 2, src: "/images/team1.jpeg", alt: "img2" },
+    { id: 3, src: "/images/team6.jpeg", alt: "img3" },
+    { id: 4, src: "/images/team7.jpeg", alt: "img4" },
   ];
 
   // State to track the main image
